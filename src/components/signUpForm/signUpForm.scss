@@ -45,8 +45,9 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .inputBox {
@@ -54,10 +55,10 @@
   height: 7rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: space-between;
   padding: 1rem 1rem 0 1rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.55rem;
   box-sizing: border-box;
 
   input {
@@ -123,5 +124,78 @@ label {
 
   &:hover {
     color: #0a6eb6;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup {
+    width: 80%;
+    height: 44rem;
+  }
+
+  .logo-wrapper {
+    height: 6rem;
+  }
+
+  .logo {
+    font-size: 1.375rem;
+    text-align: center;
+  }
+
+  .title-wrapper {
+    h2 {
+      font-size: 1.375rem;
+    }
+  }
+
+  .inputBox {
+    padding: 0;
+    margin-bottom: 0rem;
+
+    .label {
+      font-size: 0.25rem;
+    }
+
+    input {
+      height: 1rem;
+    }
+  }
+
+  .button-box {
+    height: 7rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 0;
+  }
+
+  .button {
+    width: 50%;
+  }
+
+  .link {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .signup {
+    width: 60%;
+    height: 67%;
+  }
+
+  .button {
+    width: 25%;
+  }
+
+  .link {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
+  .signup {
+    width: 40%;
+    height: 75%;
   }
 }

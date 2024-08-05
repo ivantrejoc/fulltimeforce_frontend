@@ -3,7 +3,7 @@ import "./signin.scss";
 
 const SignIn = () => {
   return (
-    <main className="page-layout">
+    <main className="page-layout-signin">
       <SignInForm />
     </main>
   );

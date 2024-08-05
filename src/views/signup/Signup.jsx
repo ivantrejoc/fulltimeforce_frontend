@@ -3,7 +3,7 @@ import "./signup.scss";
 
 const Signup = () => {
   return (
-    <div className="page-layout">
+    <div className="page-layout-signup">
       <SignUpForm />
     </div>
   );
