@@ -1,7 +1,11 @@
 import "./signUpForm.scss";
 import { useForm } from "react-hook-form";
+import { createUser } from "../../services/userServices";
+import { useNavigate } from "react-router-dom";
 
 const SignUpForm = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -10,9 +14,24 @@ const SignUpForm = () => {
     formState: { errors }
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      const { email, username, password } = data;
+      const userData = {
+        email,
+        userName: username,
+        password
+      };
+      const response = await createUser(userData);
+      if (response.status === 201) {
+        alert(response.data.message);
+        reset();
+        navigate("/signin");
+      }
+    } catch (error) {
+      console.error(error);
+      alert(error.message);
+    }
   };
 
   return (
