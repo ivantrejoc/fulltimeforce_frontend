@@ -23,10 +23,14 @@ const SignUpForm = () => {
         password
       };
       const response = await createUser(userData);
+      console.log("RESPONSE: ", response);
       if (response.status === 201) {
         alert(response.data.message);
         reset();
         navigate("/signin");
+      }
+      else if(response.error){
+        alert(response.error);
       }
     } catch (error) {
       console.error(error);

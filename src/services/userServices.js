@@ -10,6 +10,14 @@ export const createUser = async (userData) => {
     }
   } catch (error) {
     console.error(error);
-    return error.message;
+    if (error.response && error.response.status === 400) {
+      return {
+        error: error.response.data.message
+      };
+    } else {
+      return {
+        error: error.message
+      };
+    }
   }
 };

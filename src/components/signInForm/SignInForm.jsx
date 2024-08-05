@@ -15,11 +15,12 @@ const SignInForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      console.log(data);
       const response = await signIn(data);
-      if (response.status === 200) {        
+      if (response.autheticated) {
         navigate("/");
         reset();
+      } else {
+        alert(response.error);
       }
     } catch (error) {
       console.error(error);
