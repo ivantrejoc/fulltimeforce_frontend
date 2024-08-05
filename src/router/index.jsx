@@ -5,7 +5,7 @@ import SignIn from "../views/signin/SignIn";
 import CreatePost from "../views/createPost/CreatePost";
 import EditPost from "../views/editPost/EditPost";
 import ViewPostById from "../views/viewPostById/ViewPostById";
-
+import NotFound from "../views/notFound/NotFound";
 
 
 const Router = () => {
@@ -33,6 +33,10 @@ const Router = () => {
         {
             path: "/post/:id",
             element: <ViewPostById />
+        },
+        {
+            path: "*",
+            element: <NotFound /> 
         }
     ]);    
 }
