@@ -1,9 +1,10 @@
+import SignUpForm from "../../components/signUpForm/SignUpForm";
 import "./signup.scss";
 
 const Signup = () => {
   return (
     <div className="page-layout">
-      <h1>HOLA SOY SIGN UP</h1>
+      <SignUpForm />
     </div>
   );
 };
