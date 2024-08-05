@@ -14,10 +14,11 @@ export const signIn = async (userData) => {
   }
 };
 
-const singOut = async () => {
+export const signOut = async () => {
     try {
         const response = await axios.post(`${URL}/auth/signout`);
         if (response.status === 200) {
+            console.log("RESPUESTA EN EL SERVICE: ", response);
           return response;
         }
       } catch (error) {
