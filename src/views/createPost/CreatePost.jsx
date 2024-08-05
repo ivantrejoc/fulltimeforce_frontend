@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import "./createPost.scss";
 export default class CreatePost extends Component {
   render() {
     return (

@@ -1,3 +1,5 @@
+import "./signin.scss";
+
 const SignIn = () => {
   return (
     <div className="page-layout">

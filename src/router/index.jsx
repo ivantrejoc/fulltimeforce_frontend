@@ -4,7 +4,7 @@ import Signup from "../views/signup/Signup";
 import SignIn from "../views/signin/SignIn";
 import CreatePost from "../views/createPost/CreatePost";
 import EditPost from "../views/editPost/EditPost";
-import viewPostById from "../views/viewPostById/ViewPostById";
+import ViewPostById from "../views/viewPostById/ViewPostById";
 
 
 
@@ -32,7 +32,7 @@ const Router = () => {
         },
         {
             path: "/post/:id",
-            element: <viewPostById />
+            element: <ViewPostById />
         }
     ]);    
 }

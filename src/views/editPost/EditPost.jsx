@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./editPost.scss"
 export default class EditPost extends Component {
   render() {
     return (

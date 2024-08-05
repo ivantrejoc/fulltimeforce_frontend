@@ -1,4 +1,4 @@
-import "./blogPost.css";
+import "./blogPost.scss";
 
 const BlogPostList = () => {
   return (

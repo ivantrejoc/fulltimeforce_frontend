@@ -1,3 +1,5 @@
+import "./viewPostById.scss";
+
 const ViewPostById = () => {
   return (
     <div className="page-layout">
