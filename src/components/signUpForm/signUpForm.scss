@@ -1,4 +1,4 @@
-.signin {
+.signup {
   background-color: #e3e3e3;
   width: 30%;
   height: 80%;
@@ -93,9 +93,9 @@ label {
   box-sizing: border-box;
 }
 
-.signUp {
+.button {
   width: 25%;
-  background-color: #514a4a;
+  background-color: #50614d;
   color: rgb(255, 255, 255);
   font-size: 1.5rem;
   padding: 0.25rem;
@@ -106,14 +106,14 @@ label {
   font-variant: normal;
   text-transform: none;
   display: inline-block;
-}
 
-.signUp:hover {
-  background: #c9c9c9;
-}
+  &:hover {
+    background: #74a23f;
+  }
 
-.signUp:active {
-  background: #aeaeae;
+  &:active {
+    background: #487712;
+  }
 }
 
 .link {

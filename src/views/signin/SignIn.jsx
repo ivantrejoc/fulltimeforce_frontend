@@ -1,10 +1,11 @@
+import SignInForm from "../../components/signInForm/SignInForm";
 import "./signin.scss";
 
 const SignIn = () => {
   return (
-    <div className="page-layout">
-      <h1>SignIn</h1>
-    </div>
+    <main className="page-layout">
+      <SignInForm />
+    </main>
   );
 };
 export default SignIn;

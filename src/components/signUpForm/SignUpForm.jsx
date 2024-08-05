@@ -2,7 +2,7 @@ import "./signUpForm.scss";
 
 const SignUpForm = () => {
   return (
-    <div class="signin">
+    <div class="signup">
       <div class="content">
       <div className="logo-wrapper">
         <h2 className="logo">Welcome to My Blog</h2>
@@ -16,7 +16,6 @@ const SignUpForm = () => {
             <input type="text" placeholder="Johndoe@mail.com" required /> 
             <p>errors....</p>
           </div>
-
           <div class="inputBox">
             <label htmlFor="">Username</label>
             <input type="text" placeholder="johndoe21" required /> 
@@ -34,8 +33,8 @@ const SignUpForm = () => {
           </div>
           
           <div class="button-box">
-            <button className="signUp" type="submit">Sign up </button>
-            <a className="link" href="/signin">You have an account? Click here</a>
+            <button className="button" type="submit">Sign up </button>
+            <a className="link" href="/signin">Do You have an account? Click here</a>
           </div>
         </form>
       </div>
