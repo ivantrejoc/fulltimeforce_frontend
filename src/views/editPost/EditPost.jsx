@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./editPost.scss";
 
 export default class EditPost extends Component {
   render() {
@@ -7,7 +8,7 @@ export default class EditPost extends Component {
       <div className="create-form-wrapper">
         <div className="create-content">
           <div className="create-title-wrapper">
-            <h2>Create Your Post</h2>
+            <h2>Edit Post</h2>
           </div>
           <form className="create-form">
             <div className="create-inputBox">
@@ -23,7 +24,7 @@ export default class EditPost extends Component {
 
             <div className="create-button-box">
               <button className="create-button" type="submit">
-                Create Post{" "}
+                Edit Post{" "}
               </button>
             </div>
           </form>
