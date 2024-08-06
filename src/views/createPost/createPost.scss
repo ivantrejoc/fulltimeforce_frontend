@@ -154,6 +154,7 @@ label {
   .create-form-wrapper {
     width: 80%;
     height: 44rem;
+    margin-top: 15rem;
   }
 
   .logo-wrapper {
@@ -192,8 +193,8 @@ label {
     margin-top: 0;
   }
 
-  .button {
-    width: 50%;
+  .create-button {
+    width: 60%;
   }
 
   .link {
@@ -214,11 +215,17 @@ label {
   .link {
     font-size: 0.85rem;
   }
+  .create-button {
+    width: 40%;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1440px) {
   .create-form-wrapper {
     width: 40%;
     height: 75%;
+  }
+  .create-button {
+    width: 40%;
   }
 }
