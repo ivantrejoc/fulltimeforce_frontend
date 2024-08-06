@@ -2,8 +2,9 @@
   background: #f6f6f6;
   flex-grow: 1;
   width: 100%;
+  height: 100vh;
   max-width: 100%;
-  max-height: fit-content;
+  max-height: 200vh;  
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -94,6 +95,7 @@
   font-style: normal;
   font-variant: normal;
   text-transform: none;
+  padding: 0.5rem;
   display: inline-block;
 
   &:hover {

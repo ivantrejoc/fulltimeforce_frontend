@@ -62,3 +62,25 @@ export const createPost = async (postData) => {
     }
   }
 };
+
+export const editApiPost = async (postData) => {
+  try {
+    const { id, title, author, content } = postData;
+    const newValues = {
+      title,
+      author,
+      content
+    };
+    const response = await axios.put(`${URL}/posts/post/${id}`, newValues, {
+      withCredentials: true
+    });
+    if (response.status === 200) {
+      return response.data;
+    }
+  } catch (error) {
+    console.error(error);
+    return {
+      error: error.message
+    };
+  }
+};
