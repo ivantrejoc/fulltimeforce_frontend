@@ -11,3 +11,21 @@
   overflow: hidden;
   box-sizing: border-box;
 }
+
+.blog-posts-grid{ 
+  width: 90%;
+  height: 90%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+  margin-top: 5.5rem;
+}
+
+.post-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
