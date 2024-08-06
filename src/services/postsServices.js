@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 const URL = process.env.REACT_APP_API;
 
 export const getApiPosts = async () => {
@@ -11,6 +10,23 @@ export const getApiPosts = async () => {
     if (response.status === 200) {
       const posts = response.data;
       return posts;
+    }
+  } catch (error) {
+    console.error(error);
+    return {
+      error: error.message
+    };
+  }
+};
+
+export const getApiPostById = async (id) => {
+  try {
+    const response = await axios.get(`${URL}/posts/post/${id}`, {
+      withCredentials: true
+    });
+    if (response.status === 200) {
+      const post = response.data;
+      return post;
     }
   } catch (error) {
     console.error(error);

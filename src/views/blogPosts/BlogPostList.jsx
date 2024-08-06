@@ -7,7 +7,7 @@ import "./blogPost.scss";
 
 const BlogPostList = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(4);
+  const [postsPerPage] = useState(4);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,11 +15,9 @@ const BlogPostList = () => {
   }, [dispatch]);
 
   const allPosts = useSelector((state) => state.posts);
-  console.log("LOS POST DEL STORE EN BLOG LIST: ", allPosts);
-
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = allPosts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = allPosts?.slice(indexOfFirstPost, indexOfLastPost);
 
   const pagination = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -27,17 +25,18 @@ const BlogPostList = () => {
 
   return (
     <main className="pst-list-page-layout">
-      <section className="blog-posts-grid">        
-          {currentPosts?.map((post)=>(
-            <div className="post-grid-item" key={post._id}>
-             <PostCard author={post.author}
-             content={post.content}
-             title={post.title}
-             date={post.createdAt}
-             />
-             </div>     
-          ))}         
-           
+      <section className="blog-posts-grid">
+        {currentPosts?.map((post) => (
+          <div className="post-grid-item" key={post._id}>
+            <PostCard
+              id={post._id}
+              author={post.author}
+              content={post.content}
+              title={post.title}
+              date={post.createdAt}
+            />
+          </div>
+        ))}
       </section>
       <div className="blog-post-pag-wrapper">
         <Pagination

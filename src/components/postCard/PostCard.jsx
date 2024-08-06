@@ -1,6 +1,18 @@
+import { useDispatch } from "react-redux";
+import { getPostById } from "../../redux/actions";
+import { useNavigate } from "react-router-dom";
 import "./postCard.scss";
 
-const PostCard = ({ author, content, title, date }) => {
+const PostCard = ({ id, author, content, title, date }) => {
+  const dispatch = useDispatch();
+  const navigation = useNavigate();
+
+  const handleGetPost = (id) => {
+    dispatch(getPostById(id)).then(() => {
+      navigation(`/post/${id}`);
+    });
+  };
+
   return (
     <div className="pst-card-layout">
       <div className="pst-card-title-wrapper">
@@ -16,9 +28,9 @@ const PostCard = ({ author, content, title, date }) => {
         <p className="pst-card-info">{date}</p>
       </div>
       <div className="pst-button-box">
-        <a href="/post/2" className="pst-button">
+        <button onClick={() => handleGetPost(id)} className="pst-button">
           Read More
-        </a>
+        </button>
       </div>
     </div>
   );
