@@ -1,9 +1,10 @@
+import PostCard from "../../components/postCard/PostCard";
 import "./blogPost.scss";
 
 const BlogPostList = () => {
   return (
     <main className="page-layout">
-        <h1>Blog Posts</h1>
+        <PostCard/>
     </main>
   )
 }
