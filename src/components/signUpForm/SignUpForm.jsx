@@ -22,8 +22,7 @@ const SignUpForm = () => {
         userName: username,
         password
       };
-      const response = await createUser(userData);
-      console.log("RESPONSE: ", response);
+      const response = await createUser(userData);     
       if (response.status === 201) {
         alert(response.data.message);
         reset();
