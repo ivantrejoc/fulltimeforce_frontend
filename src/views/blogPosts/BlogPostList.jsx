@@ -6,22 +6,22 @@ const BlogPostList = () => {
   return (
     <main className="pst-list-page-layout">
       <section className="blog-posts-grid">
-        <div className="post-card-container">
+        <div className="post-grid-item">
           <PostCard />
         </div>
-        <div className="post-card-container">
+        <div className="post-grid-item">
           <PostCard />
         </div>
-        <div className="post-card-container">
+        <div className="post-grid-item">
           <PostCard />
         </div>
-        <div className="post-card-container">
+        <div className="post-grid-item">
           <PostCard />
         </div>
-              </section>
-              <div className="blog-post-pag-wrapper">
+      </section>
+      <div className="blog-post-pag-wrapper">
         <Pagination />
-        </div>
+      </div>
     </main>
   );
 };

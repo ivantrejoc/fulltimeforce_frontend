@@ -20,10 +20,10 @@ const PostCard = () => {
         <p className="pst-card-info">07/29/2024</p>
       </div>
       <div className="pst-button-box">
-            <button className="pst-button" type="submit">
-              Read More{" "}
-            </button>            
-          </div>
+        <a href="/post/2" className="pst-button">
+          Read More
+        </a>
+      </div>
     </div>
   );
 };

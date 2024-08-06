@@ -28,8 +28,7 @@ const SignUpForm = () => {
         alert(response.data.message);
         reset();
         navigate("/signin");
-      }
-      else if(response.error){
+      } else if (response.error) {
         alert(response.error);
       }
     } catch (error) {
