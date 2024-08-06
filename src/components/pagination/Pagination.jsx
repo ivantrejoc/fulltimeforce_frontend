@@ -1,11 +1,10 @@
 import "./pagination.scss";
 
-const Pagination = ({ pageSize, appointments, currentPage, pagination }) => {
+const Pagination = ({ postsPerPage, allPosts, pagination, currentPage }) => {
   const pageNumbers = [];
-  // for (let i = 1; i <= Math.ceil(appointments.length / pageSize); i++) {
-  //   pageNumbers.push(i);
-  // }
-  // const totalPages = pageNumbers.length;
+  for (let i = 1; i <= Math.ceil(allPosts / postsPerPage); i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <div className="pag-wrapper">
@@ -18,25 +17,16 @@ const Pagination = ({ pageSize, appointments, currentPage, pagination }) => {
           <span className="pag-button-text">Previous</span>
         </button>
 
-        {/* {pageNumbers?.map((number) => ( */}
-        <li>
-          <button className="pag-btn-num"
-          // className={`pag-btn-num
-          //  ${
-          //    currentPage === number
-          //      ? " pag-btn-num"
-          //      : ""
-          //  }`}
-
-          // onClick={() => pagination(number)}
-          >
-            1
-          </button>
-        </li>
-        <li>
-          <button className="pag-btn-num">2</button>
-        </li>
-        {/* ))} */}
+        {pageNumbers?.map((number) => (
+          <li key={number}>
+            <button
+              className="pag-btn-num"
+              onClick={() => pagination(number)}
+            >
+              {number}
+            </button>
+          </li>
+        ))}
 
         <li>
           <button

@@ -1,14 +1,13 @@
-import { GET_API_TOKEN } from "./action-types";
+import { GET_POSTS } from "./action-types";
 
 const initialState = {
-  token: null
+  posts: []
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_API_TOKEN:
-      console.log("EL STATE LUEGO DE GUARDAR EL TOKEN: ",{ ...state, token: action.payload });
-      return { ...state, token: action.payload};
+    case GET_POSTS:
+      return { ...state, posts: action.payload };
     default:
       return { ...state };
   }

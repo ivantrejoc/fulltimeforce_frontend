@@ -1,1 +1,1 @@
-export const GET_API_TOKEN = "GET_API_TOKEN";
+export const GET_POSTS = "GET_POSTS";

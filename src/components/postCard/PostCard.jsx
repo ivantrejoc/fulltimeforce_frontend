@@ -1,23 +1,19 @@
 import "./postCard.scss";
 
-const PostCard = () => {
+const PostCard = ({ author, content, title, date }) => {
   return (
     <div className="pst-card-layout">
       <div className="pst-card-title-wrapper">
-        <h3 className="pst-card-title">Post Title</h3>
+        <h3 className="pst-card-title">{title}</h3>
       </div>
       <div className="pst-card-content-wrapper">
-        <p className="pst-card-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit
-          amet nunc ac metus iaculis egestas. Pellentesque turpis nisi,
-          dignissim eu rhoncus et, euismod in felis.
-        </p>
+        <p className="pst-card-content">{content}</p>
       </div>
       <div className="pst-card-info-wrapper">
         <p className="pst-card-info">
-          Posted by: <span className="pst-card-author">John Doe </span>{" "}
+          Posted by: <span className="pst-card-author">{author} </span>{" "}
         </p>
-        <p className="pst-card-info">07/29/2024</p>
+        <p className="pst-card-info">{date}</p>
       </div>
       <div className="pst-button-box">
         <a href="/post/2" className="pst-button">

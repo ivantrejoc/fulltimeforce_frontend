@@ -1,26 +1,51 @@
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import PostCard from "../../components/postCard/PostCard";
 import Pagination from "../../components/pagination/Pagination";
+import { getPosts } from "../../redux/actions";
 import "./blogPost.scss";
 
 const BlogPostList = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(4);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
+
+  const allPosts = useSelector((state) => state.posts);
+  console.log("LOS POST DEL STORE EN BLOG LIST: ", allPosts);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = allPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const pagination = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <main className="pst-list-page-layout">
-      <section className="blog-posts-grid">
-        <div className="post-grid-item">
-          <PostCard />
-        </div>
-        <div className="post-grid-item">
-          <PostCard />
-        </div>
-        <div className="post-grid-item">
-          <PostCard />
-        </div>
-        <div className="post-grid-item">
-          <PostCard />
-        </div>
+      <section className="blog-posts-grid">        
+          {currentPosts?.map((post)=>(
+            <div className="post-grid-item" key={post._id}>
+             <PostCard author={post.author}
+             content={post.content}
+             title={post.title}
+             date={post.createdAt}
+             />
+             </div>     
+          ))}         
+           
       </section>
       <div className="blog-post-pag-wrapper">
-        <Pagination />
+        <Pagination
+          postsPerPage={postsPerPage}
+          allPosts={allPosts.length}
+          pagination={pagination}
+          currentPage={currentPage}
+        />
       </div>
     </main>
   );
