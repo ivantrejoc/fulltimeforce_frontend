@@ -27,13 +27,7 @@ const SignInForm = () => {
         } else {
           throw new Error(response.error);
         }
-      }, 0);
-      // console.log("AUTHORIZATION EN FUNC: ", authorization);
-      // if (response.authenticated && authorization.authenticated) {
-      //   navigate("/");
-      // } else {
-      //   throw new Error(response.error);
-      // }
+      }, 0);     
     } catch (error) {
       console.error(error);
       alert(error.message);
