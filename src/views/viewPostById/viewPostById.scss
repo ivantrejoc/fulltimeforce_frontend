@@ -1,0 +1,153 @@
+.viewpst-page-layout {
+  background: #f6f6f6;
+  flex-grow: 1;
+  width: 100%;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 200vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.viewpst-card-layout {
+  background-color: #f0f0f0;
+  height: fit-content;
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  border: 1px solid #ABABAB;
+  box-shadow: 3px 3px 2px 0px rgba(56, 56, 56, 0.23);
+  box-sizing: border-box;
+}
+
+.viewpst-card-title-wrapper {  
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  padding: 2rem;
+  box-sizing: "border-box";
+}
+
+.viewpst-card-title {
+  font-size: 1.5rem;
+}
+
+.viewpst-card-content-wrapper {  
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: "border-box";
+}
+
+.viewpst-card-content {
+  width: 100%;
+  height: 100%;
+  font-size: 1.25rem;
+}
+
+.viewpst-card-info-wrapper { 
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  box-sizing: border-box;
+}
+
+.viewpst-card-info {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.viewpst-button-box { 
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  box-sizing: border-box;
+}
+
+.viewpst-button {
+  width: 10rem;
+  height: 3rem;
+  background-color: #50614d;
+  color: rgb(255, 255, 255);
+  font-size: 1.25rem;
+  font-weight: 400;
+  padding: 0.25rem;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  padding: 0.5rem;
+  display: inline-block;
+
+  &:hover {
+    background: #74a23f;
+  }
+
+  &:active {
+    background: #487712;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .viewpst-card-title-wrapper {
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
+  .viewpst-button-box {
+    height: 5rem;
+    justify-content: space-around;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+
+  .viewpst-button {
+    width: 45%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .viewpst-card-title-wrapper {
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
+  .viewpst-button-box {
+    height: 5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
+  .viewpst-card-title-wrapper {
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
+  .viewpst-button-box {
+    height: 5rem;
+  }
+
+  .viewpst-card-title-wrapper {
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
+}

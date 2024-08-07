@@ -1,0 +1,265 @@
+.create-page-layout {
+    background: #f6f6f6;
+    flex-grow: 1;
+    width: 100%;
+    height: 110vh;
+    max-width: 100%;
+    padding: 5rem 0 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.create-form-wrapper {
+    background-color: #e3e3e3;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid #ABABAB;
+    box-shadow: 3px 3px 2px 0px rgba(56, 56, 56, 0.23);
+}
+
+.create-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+.create-title-wrapper {
+    display: flex;
+    width: 100%;
+    padding-left: 1rem;
+    box-sizing: border-box;
+}
+
+.create-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.create-inputBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+    padding: 1rem 1rem 0 1rem;
+    margin-bottom: 0.55rem;
+    box-sizing: border-box;
+
+    label {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    input {
+        width: 100%;
+        height: 2.5rem;
+        border-radius: 10px;
+        border: 1px solid #686868;
+        font-family: "Poppins";
+        font-size: 1rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
+
+        &::placeholder {
+            color: #989898;
+            font-family: "Poppins";
+            font-size: 1rem;
+        }
+    }
+
+    textarea {
+        width: 100%;
+        height: 22rem;
+        border-radius: 10px;
+        border: 1px solid #686868;
+        font-family: "Poppins";
+        font-size: 1rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
+
+        texarea::placeholder {
+            color: #989898;
+            font-family: "Poppins";
+            font-size: 1rem;
+        }
+    }
+}
+
+label {
+    font-size: 1rem;
+}
+
+.create-button-box {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    box-sizing: border-box;
+}
+
+.create-button {
+    width: 12%;
+    background-color: #50614d;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    padding: 0.25rem;
+    border-radius: 10px;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: inline-block;
+
+    &:hover {
+        background: #74a23f;
+    }
+
+    &:active {
+        background: #487712;
+    }
+}
+
+.link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #0f86dc;
+
+    &:hover {
+        color: #0a6eb6;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .create-form-wrapper {
+        width: 80%;
+        height: 44rem;
+        margin: 13rem 0 5rem 0;
+    }
+
+    .logo-wrapper {
+        height: 6rem;
+    }
+
+    .logo {
+        font-size: 1.375rem;
+        text-align: center;
+    }
+
+    .title-wrapper {
+        h2 {
+            font-size: 1.375rem;
+        }
+    }
+
+    .inputBox {
+        padding: 0;
+        margin-bottom: 0rem;
+
+        .label {
+            font-size: 0.25rem;
+        }
+
+        input {
+            height: 1rem;
+        }
+    }
+
+    .button-box {
+        height: 7rem;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-top: 0;
+    }
+
+    .create-button {
+        width: 60%;
+    }
+
+    .link {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 480px) {
+    .create-page-layout {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .create-form-wrapper {
+        width: 80%;
+        height: 44rem;
+        margin: 8rem 0 5rem 0;
+
+    }
+
+    .create-button {
+        width: 60%;
+    }
+
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .create-page-layout {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .create-form-wrapper {
+        width: 60%;
+        height: 80%;
+        margin: 10rem 0 5rem 0;
+    }
+
+    .button {
+        width: 25%;
+    }
+
+    .link {
+        font-size: 0.85rem;
+    }
+
+    .create-button {
+        width: 40%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
+    .create-page-layout {
+        height: 110vh;
+        overflow-x: hidden;
+    }
+
+    .create-form-wrapper {
+        width: 60%;
+        height: 90vh;
+        margin: 10rem 0 5rem 0;
+    }
+
+    .create-button {
+        width: 30%;
+    }
+}
