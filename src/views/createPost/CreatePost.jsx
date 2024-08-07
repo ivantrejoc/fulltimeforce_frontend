@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { createPost } from "../../services/postsServices";
 import { connect } from "react-redux";
 import "./createPost.scss";
-import { redirect } from "react-router-dom";
 
 class CreatePost extends Component {
   constructor(props) {

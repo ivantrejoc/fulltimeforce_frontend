@@ -3,7 +3,8 @@ import {
   GET_POSTS,
   EDIT_POST,
   DELETE_POST,
-  GET_AUTH
+  GET_AUTH,
+  LOGOUT
 } from "./action-types";
 import {
   getApiPosts,
@@ -11,8 +12,7 @@ import {
   editApiPost,
   deleteApiPost
 } from "../services/postsServices";
-import { signIn } from "../services/authServices";
-import { redirect, useNavigate } from "react-router-dom";
+
 
 export const getPosts = () => {
   return async (dispatch) => {
@@ -99,6 +99,25 @@ export const getAuthorization = (sessionData) => {
         dispatch({
           type: GET_AUTH,
           payload: sessionData
+        });
+      } else {
+        throw new Error("Something is wrong");
+      }
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  };
+};
+
+export const logout = (response) => {
+  return async (dispatch) => {
+    const apiResponse = response.data.message;    
+    try {
+      if (apiResponse === "User signed out successfully") {
+        dispatch({
+          type: LOGOUT,
+          payload: null
         });
       } else {
         throw new Error("Something is wrong");

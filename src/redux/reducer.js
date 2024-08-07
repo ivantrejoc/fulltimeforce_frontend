@@ -3,7 +3,8 @@ import {
   GET_POST_BY_ID,
   EDIT_POST,
   DELETE_POST,
-  GET_AUTH
+  GET_AUTH,
+  LOGOUT
 } from "./action-types";
 
 const initialState = {
@@ -32,6 +33,8 @@ const rootReducer = (state = initialState, action) => {
       );
       return { ...state, posts: updatedPosts };
     case GET_AUTH:
+      return { ...state, isAuth: action.payload };
+    case LOGOUT:
       return { ...state, isAuth: action.payload };
     default:
       return { ...state };
