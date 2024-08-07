@@ -37,9 +37,9 @@ const SignInForm = () => {
           <h2>Sign in</h2>
         </div>
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
-          <div className="inputBox">
+          <div className="signin-inputBox">
             <label htmlFor="email">Email</label>
-            <input
+            <input className="signin-input"
               id="email"
               type="text"
               placeholder="Johndoe@mail.com"
@@ -56,9 +56,10 @@ const SignInForm = () => {
             />
             {errors.email && <p>{errors.email.message}</p>}
           </div>
-          <div className="inputBox">
+          <div className="signin-inputBox">
             <label htmlFor="password">Password</label>
             <input
+            className="signin-input"
               id="password"
               type="password"
               placeholder="Your password..."

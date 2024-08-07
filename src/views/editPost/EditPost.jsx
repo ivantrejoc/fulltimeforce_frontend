@@ -27,7 +27,7 @@ const EditPost = () => {
       const response = dispatch(editPost(data));
       console.log("RESPONSE EN COMPONENTE: ", response);
       if (response) {
-       alert("Post updated");
+        alert("Post updated");
         navigate("/");
         reset();
       } else {
@@ -55,7 +55,6 @@ const EditPost = () => {
                 placeholder={post.title}
                 {...register("title")}
               />
-              <p>errors...</p>
             </div>
             <div className="create-inputBox">
               <label htmlFor="content">Content</label>
@@ -67,7 +66,6 @@ const EditPost = () => {
                 {...register("content")}
                 defaultValue={post.content}
               />
-              <p>errors...</p>
             </div>
 
             <div className="create-button-box">

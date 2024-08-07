@@ -249,13 +249,13 @@ label {
 
 @media (min-width: 769px) and (max-width: 1440px) {
     .create-page-layout {
-        height: 100vh;
-        overflow: hidden;
+        height: 110vh;
+        overflow-x: hidden;
     }
 
     .create-form-wrapper {
         width: 60%;
-        height: 90%;
+        height: 90vh;
         margin: 10rem 0 5rem 0;
     }
 

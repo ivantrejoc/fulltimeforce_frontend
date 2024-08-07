@@ -14,6 +14,10 @@ const ViewPostById = () => {
     });
   };
 
+  
+  const rawDate = new Date(post.updatedAt);
+  const formattedDate = rawDate.toLocaleString('en-US', { year: "2-digit", month: "2-digit", day: "2-digit"})
+
   return (
     <main className="viewpst-page-layout">
       <div className="viewpst-card-layout">
@@ -27,7 +31,7 @@ const ViewPostById = () => {
           <p className="viewpst-card-info">
             Author: {post.author} <span className="viewpst-card-author"></span>{" "}
           </p>
-          <p className="viewpst-card-info">{post.updatedAt}</p>
+          <p className="viewpst-card-info">{formattedDate}</p>
         </div>
         <div className="viewpst-button-box">
           <button

@@ -41,16 +41,16 @@
   box-sizing: border-box;
 }
 
-.form {
+.signup-form {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
 }
 
-.inputBox {
+.signup-inputBox {
   width: 100%;
   height: 7rem;
   display: flex;
@@ -61,7 +61,7 @@
   margin-bottom: 0.55rem;
   box-sizing: border-box;
 
-  input {
+  .signup-input {
     width: 100%;
     height: 2.5rem;
     border-radius: 10px;
@@ -83,7 +83,7 @@ label {
   font-size: 1rem;
 }
 
-.button-box {
+.signup-buttonBox {
   width: 100%;
   height: 4rem;
   display: flex;
@@ -148,20 +148,20 @@ label {
     }
   }
 
-  .inputBox {
-    padding: 0;
-    margin-bottom: 0rem;
+  .signup-inputBox {
+    height: 6rem;
+    margin-bottom: 1rem;
 
     .label {
       font-size: 0.25rem;
     }
 
-    input {
-      height: 1rem;
+    .signup-input {
+      height: 2.5rem;
     }
   }
 
-  .button-box {
+  .signup-buttonBox {
     height: 7rem;
     flex-direction: column;
     align-items: flex-start;
@@ -184,6 +184,10 @@ label {
     height: 67%;
   }
 
+  .signup-buttonBox {
+    margin-top: 1rem;
+  }
+
   .button {
     width: 25%;
   }
@@ -196,6 +200,19 @@ label {
 @media (min-width: 769px) and (max-width: 1440px) {
   .signup {
     width: 40%;
-    height: 75%;
+    height: 83vh;
+  }
+
+  .signup-form {
+    height: 64.4vh;
+  }
+
+  .signup-inputBox {
+    height: 5.5rem;
+    padding: 0rem 1rem 0 1rem;
+  }
+
+  .signup-buttonBox {
+    margin-top: 1rem;
   }
 }

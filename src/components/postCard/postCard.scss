@@ -1,7 +1,7 @@
 .pst-card-layout {
     background-color: #f0f0f0;
     width: 44.5vw;
-    height: 40vh;
+    height: 42vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -11,7 +11,7 @@
     box-shadow: 3px 3px 2px 0px rgba(56, 56, 56, 0.23);
 }
 
-.pst-card-title-wrapper {    
+.pst-card-title-wrapper {
     display: flex;
     width: 100%;
     height: 4rem;
@@ -23,7 +23,7 @@
     font-size: 1.5rem;
 }
 
-.pst-card-content-wrapper {    
+.pst-card-content-wrapper {
     width: 100%;
     height: 6rem;
     display: flex;
@@ -39,7 +39,7 @@
     font-size: 1.25rem;
 }
 
-.pst-card-info-wrapper {    
+.pst-card-info-wrapper {
     width: 100%;
     height: 3.5rem;
     display: flex;
@@ -56,6 +56,7 @@
 }
 
 .pst-button-box {
+
     width: 100%;
     height: 3.5rem;
     display: flex;
@@ -88,39 +89,51 @@
 }
 
 @media (max-width: 480px) {
-    .pst-card-layout {        
+    .pst-card-layout {
         width: 90vw;
-        height: 30rem;
-        
+        height: 75vh;
+
     }
-    .pst-card-content-wrapper{
+
+    .pst-card-title-wrapper {
+        height: 8rem;
+    }
+
+    .pst-card-content-wrapper {
         height: 15rem;
     }
-    .pst-button{
+
+    .pst-button {
         width: 50%;
     }
 
 }
-  
-  @media (min-width: 481px) and (max-width: 768px) {
-    .pst-card-layout {        
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .pst-card-layout {
         width: 43vw;
-        height: 30rem;        
+        height: 55vh;
     }
-    .pst-card-content-wrapper{
-        height: 15rem;
-    }
-    .pst-button{
-        width: 50%;
-    }
-  }
-  
-  @media (min-width: 769px) and (max-width: 1440px) {
-    .pst-card-layout{
-        width: 43.9vw;
-    }
-    
-    .pst-card-content-wrapper{
+
+    .pst-card-title-wrapper {
         height: 8rem;
     }
-  }
+
+    .pst-card-content-wrapper {
+        height: 15rem;
+    }
+
+    .pst-button {
+        width: 50%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
+    .pst-card-layout {
+        width: 43.9vw;
+    }
+
+    .pst-card-content-wrapper {
+        height: 8rem;
+    }
+}

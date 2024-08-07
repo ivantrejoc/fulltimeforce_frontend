@@ -22,7 +22,7 @@ const SignUpForm = () => {
         userName: username,
         password
       };
-      const response = await createUser(userData);     
+      const response = await createUser(userData);
       if (response.status === 201) {
         alert(response.data.message);
         reset();
@@ -45,10 +45,11 @@ const SignUpForm = () => {
         <div className="title-wrapper">
           <h2>Sign up</h2>
         </div>
-        <form className="form" onSubmit={handleSubmit(onSubmit)}>
-          <div className="inputBox">
+        <form className="signup-form" onSubmit={handleSubmit(onSubmit)}>
+          <div className="signup-inputBox">
             <label htmlFor="email">Email</label>
             <input
+              className="signup-input"
               id="email"
               type="text"
               placeholder="Johndoe@mail.com"
@@ -65,9 +66,10 @@ const SignUpForm = () => {
             />
             {errors.email && <p>{errors.email.message}</p>}
           </div>
-          <div className="inputBox">
+          <div className="signup-inputBox">
             <label htmlFor="username">Username</label>
             <input
+              className="signup-input"
               id="username"
               type="text"
               placeholder="johndoe21"
@@ -80,9 +82,10 @@ const SignUpForm = () => {
             />
             {errors.username && <p>{errors.username.message}</p>}
           </div>
-          <div className="inputBox">
+          <div className="signup-inputBox">
             <label htmlFor="password">Password</label>
             <input
+              className="signup-input"
               id="password"
               type="password"
               placeholder="Your password..."
@@ -101,9 +104,10 @@ const SignUpForm = () => {
             />
             {errors.password && <p>{errors.password.message}</p>}
           </div>
-          <div className="inputBox">
+          <div className="signup-inputBox">
             <label htmlFor="password">Confirm Password</label>
             <input
+              className="signup-input"
               id="confirmPassword"
               type="password"
               placeholder="Repeat your password"
@@ -119,7 +123,7 @@ const SignUpForm = () => {
             {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
           </div>
 
-          <div className="button-box">
+          <div className="signup-buttonBox">
             <button className="button" type="submit">
               Sign up{" "}
             </button>
