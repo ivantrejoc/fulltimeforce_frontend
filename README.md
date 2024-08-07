@@ -8,7 +8,7 @@ Developed using React Create App, SCSS, Redux, Axios and React-hook-form.
 
 **Download:**
 
-Please download the repository from dev branch, and don't fork the repository. Once you have the repository installed on your local, open de project and follow this instructions:
+Please download the repository from dev branch, and don't fork the repository. Once you have the repository installed on your local, open the project and follow this instructions:
 
 In the root project directory, you can run:
 
