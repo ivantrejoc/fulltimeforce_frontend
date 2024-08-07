@@ -1,13 +1,13 @@
 import "./signInForm.scss";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signIn } from "../../services/authServices";
 import { getAuthorization } from "../../redux/actions";
 
 const SignInForm = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -15,11 +15,13 @@ const SignInForm = () => {
     formState: { errors }
   } = useForm();
 
+  const authorization = useSelector((state) => state.isAuth);
   const onSubmit = async (data) => {
     try {
       const response = await signIn(data);
       dispatch(getAuthorization(response));
-      if (response.autheticated) {
+      console.log("AUTHORIZATION EN FUNC: ", authorization);
+      if (response.authenticated && authorization.authenticated) {
         navigate("/");
       } else {
         throw new Error(response.error);

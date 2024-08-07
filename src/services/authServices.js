@@ -11,7 +11,7 @@ export const signIn = async (userCred) => {
     const user = await credentials.email;
     if (response.status === 200) {
       return {
-        autheticated: true,
+        authenticated: true,
         user: user
       };
     }
@@ -19,13 +19,13 @@ export const signIn = async (userCred) => {
     if (error.response && error.response.status === 401) {
       console.log("RESPONSE EN SIGNIN: ", error.response);
       return {
-        autheticated: false,
+        authenticated: false,
         error: "Invalid credentials"
       };
     } else {
       console.log("RESPONSE EN SIGNIN: ", error.response);
       return {
-        autheticated: false,
+        authenticated: false,
         error: error.message
       };
     }
