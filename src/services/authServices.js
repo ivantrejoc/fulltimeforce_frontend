@@ -7,12 +7,12 @@ export const signIn = async (userCred) => {
     const response = await axios.post(`${URL}/auth/signin`, userCred, {
       withCredentials: true
     });
-    const user = JSON.parse(response.config.data.email);
+    const credentials = await JSON.parse(response.config.data);
+    const user = await credentials.email;
     if (response.status === 200) {
-      console.log("RESPONSE EN SIGNIN: ", response);
       return {
         autheticated: true,
-        data: user
+        user: user
       };
     }
   } catch (error) {

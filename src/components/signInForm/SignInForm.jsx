@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { signIn } from "../../services/authServices";
 import { getAuthorization } from "../../redux/actions";
 
-const SignInForm = () => {  
+const SignInForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -17,9 +17,8 @@ const SignInForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await signIn(data); 
-      console.log("RESPUESTA SERVE EN FORM: ", response);
-      dispatch(getAuthorization(response))     
+      const response = await signIn(data);
+      dispatch(getAuthorization(response));
       if (response.autheticated) {
         navigate("/");
       } else {

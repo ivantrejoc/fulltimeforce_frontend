@@ -95,7 +95,6 @@ export const deletePost = (id) => {
 export const getAuthorization = (sessionData) => {
   return async (dispatch) => {
     try {
-      console.log("SESSION DATA EN ACTION: ", sessionData);
       if (sessionData) {
         dispatch({
           type: GET_AUTH,
