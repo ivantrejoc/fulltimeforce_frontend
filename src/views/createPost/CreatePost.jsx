@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import { createPost } from "../../services/postsServices";
+import { connect } from "react-redux";
 import "./createPost.scss";
+import { redirect } from "react-router-dom";
 
-export default class CreatePost extends Component {
+class CreatePost extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: "",
       content: "",
-      author: "ivantrejoc",
+      author: this.props.session.user,
       errors: {
         title: "",
         content: ""
@@ -42,7 +44,7 @@ export default class CreatePost extends Component {
         const response = await createPost(postData);
         if (response.status === 201) {
           alert(response.data.message);
-          this.setState({ title: "", content: "" });
+          this.setState({ title: "", content: "",});          
         } else if (response.error) {
           alert(response.error);
         }
@@ -54,7 +56,7 @@ export default class CreatePost extends Component {
   };
 
   render() {
-    const { title, content, errors } = this.state;
+    const { title, content, errors } = this.state;    
     return (
       <div className="create-page-layout">
         <div className="create-form-wrapper">
@@ -101,3 +103,9 @@ export default class CreatePost extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  session: state.isAuth
+});
+const ConnectedCreatePost = connect(mapStateToProps)(CreatePost);
+export default ConnectedCreatePost;

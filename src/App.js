@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      {!(location.pathname === "/signin" || location.pathname === "/signup") && (
+      {!(location.pathname === "/signin" || location.pathname === "/signup" || location.pathname === "*") && (
         <Navbar />
       )}
       <Router />
