@@ -4,13 +4,15 @@ const URL = process.env.REACT_APP_API;
 
 export const signIn = async (userCred) => {
   try {
-    const response = await axios.post(`${URL}/auth/signin`, userCred, {withCredentials: true});
+    const response = await axios.post(`${URL}/auth/signin`, userCred, {
+      withCredentials: true
+    });
+    const user = JSON.parse(response.config.data.email);
     if (response.status === 200) {
       console.log("RESPONSE EN SIGNIN: ", response);
-      
       return {
         autheticated: true,
-        data: response.data
+        data: user
       };
     }
   } catch (error) {
@@ -32,8 +34,12 @@ export const signIn = async (userCred) => {
 
 export const signOut = async () => {
   try {
-    const response = await axios.post(`${URL}/auth/signout`, {}, {withCredentials: true});
-    if (response.status === 200) {      
+    const response = await axios.post(
+      `${URL}/auth/signout`,
+      {},
+      { withCredentials: true }
+    );
+    if (response.status === 200) {
       return response;
     }
   } catch (error) {

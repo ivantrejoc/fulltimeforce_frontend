@@ -24,7 +24,7 @@ const rootReducer = (state = initialState, action) => {
         const updatedPosts = state.posts.filter((post)=> post._id !== postdeleteId);
         return { ...state, posts: updatedPosts };
       case GET_AUTH:
-        console.log("UPDATED STATE: ",{ ...state, isAuth: action.payload });
+        console.log("UPDATED STATE WITH SESSION DATA: ",{ ...state, isAuth: action.payload });
         return { ...state, isAuth: action.payload };
     default:
       return { ...state };

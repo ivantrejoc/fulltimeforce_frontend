@@ -1,12 +1,13 @@
 import "./signInForm.scss";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { signIn } from "../../services/authServices";
 import { getAuthorization } from "../../redux/actions";
 
-const SignInForm = () => {
-  const dispatch = useDispatch();
+const SignInForm = () => {  
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -16,8 +17,14 @@ const SignInForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      dispatch(getAuthorization(data));
-      navigate("/");
+      const response = await signIn(data); 
+      console.log("RESPUESTA SERVE EN FORM: ", response);
+      dispatch(getAuthorization(response))     
+      if (response.autheticated) {
+        navigate("/");
+      } else {
+        throw new Error(response.error);
+      }
     } catch (error) {
       console.error(error);
       alert(error.message);

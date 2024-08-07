@@ -92,22 +92,17 @@ export const deletePost = (id) => {
   };
 };
 
-export const getAuthorization = (userCred) => {
+export const getAuthorization = (sessionData) => {
   return async (dispatch) => {
     try {
-      console.log("CREDENTIALS IN ACTION: ", userCred);
-      const authorization = await signIn(userCred);
-      console.log("RESPONSE IN ACTION: ", authorization);
-      if (authorization.autheticated) {
+      console.log("SESSION DATA EN ACTION: ", sessionData);
+      if (sessionData) {
         dispatch({
           type: GET_AUTH,
-          payload: authorization
+          payload: sessionData
         });
-        redirect("/");
-        return authorization;
       } else {
-        alert(authorization.message);
-        throw new Error(authorization.message);
+        throw new Error("Something is wrong");
       }
     } catch (error) {
       console.error(error);
