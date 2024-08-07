@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { signOut } from "../../services/authServices";
+import { logout } from "../../redux/actions";
 import "./navbar.scss";
 
 const NavBar = () => {
-  const location = useLocation();
+  const location = useLocation(); 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSignOut = async () => {
     try {
       const response = await signOut();
+      dispatch(logout(response));
       console.log(response);
       if (response.status === 200) {
         navigate("/signin");

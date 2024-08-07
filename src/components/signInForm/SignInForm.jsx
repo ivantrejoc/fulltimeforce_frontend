@@ -1,12 +1,13 @@
 import "./signInForm.scss";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useStore } from "react-redux";
 import { signIn } from "../../services/authServices";
 import { getAuthorization } from "../../redux/actions";
 
 const SignInForm = () => {
   const dispatch = useDispatch();
+  const store = useStore();
   const navigate = useNavigate();
 
   const {
@@ -15,19 +16,16 @@ const SignInForm = () => {
     formState: { errors }
   } = useForm();
 
-  const authorization = useSelector((state) => state.isAuth);
   const onSubmit = async (data) => {
     try {
       const response = await signIn(data);
       dispatch(getAuthorization(response));
-
-      setTimeout(() => {
-        if (response.authenticated && authorization.authenticated) {
-          navigate("/");
-        } else {
-          throw new Error(response.error);
-        }
-      }, 0);     
+      const isAuth = await store.getState().isAuth;
+      if (isAuth) {
+        navigate("/");
+      } else {
+        throw new Error(response.error);
+      }
     } catch (error) {
       console.error(error);
       alert(error.message);
