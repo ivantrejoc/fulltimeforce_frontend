@@ -84,3 +84,19 @@ export const editApiPost = async (postData) => {
     };
   }
 };
+
+export const deleteApiPost = async (id) => {
+  try {
+    const response = await axios.delete(`${URL}/posts/post/${id}`, {
+      withCredentials: true
+    });
+    if (response.status === 200) {
+      return response.data;
+    }
+  } catch (error) {
+    console.error(error);
+    return {
+      error: error.message
+    };
+  }
+};

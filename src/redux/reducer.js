@@ -1,4 +1,4 @@
-import { GET_POSTS, GET_POST_BY_ID, EDIT_POST } from "./action-types";
+import { GET_POSTS, GET_POST_BY_ID, EDIT_POST, DELETE_POST } from "./action-types";
 
 const initialState = {
   posts: [],
@@ -18,6 +18,10 @@ const rootReducer = (state = initialState, action) => {
         state.posts[index] = action.payload;
       }
       return { ...state };
+      case DELETE_POST:
+        const postdeleteId = action.payload;        
+        const updatedPosts = state.posts.filter((post)=> post._id !== postdeleteId);
+        return { ...state, posts: updatedPosts };        
     default:
       return { ...state };
   }

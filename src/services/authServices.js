@@ -33,8 +33,7 @@ export const signIn = async (userData) => {
 export const signOut = async () => {
   try {
     const response = await axios.post(`${URL}/auth/signout`, {}, {withCredentials: true});
-    if (response.status === 200) {
-      console.log("RESPUESTA EN EL SERVICE: ", response);
+    if (response.status === 200) {      
       return response;
     }
   } catch (error) {

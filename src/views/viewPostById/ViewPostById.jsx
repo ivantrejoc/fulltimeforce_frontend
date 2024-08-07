@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getPostById } from "../../redux/actions";
+import { getPostById, deletePost } from "../../redux/actions";
 import "./viewPostById.scss";
 
 const ViewPostById = () => {
@@ -14,9 +14,18 @@ const ViewPostById = () => {
     });
   };
 
-  
+  const handleDeletePost = (id) => {
+    dispatch(deletePost(id)).then(() => {
+      navigation("/");
+    });
+  };
+
   const rawDate = new Date(post.updatedAt);
-  const formattedDate = rawDate.toLocaleString('en-US', { year: "2-digit", month: "2-digit", day: "2-digit"})
+  const formattedDate = rawDate.toLocaleString("en-US", {
+    year: "2-digit",
+    month: "2-digit",
+    day: "2-digit"
+  });
 
   return (
     <main className="viewpst-page-layout">
@@ -40,7 +49,12 @@ const ViewPostById = () => {
           >
             Edit Post
           </button>
-          <button className="viewpst-button">Delete Post</button>
+          <button
+            className="viewpst-button"
+            onClick={() => handleDeletePost(post._id)}
+          >
+            Delete Post
+          </button>
         </div>
       </div>
     </main>
