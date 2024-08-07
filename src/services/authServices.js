@@ -2,9 +2,9 @@ import axios from "axios";
 
 const URL = process.env.REACT_APP_API;
 
-export const signIn = async (userData) => {
+export const signIn = async (userCred) => {
   try {
-    const response = await axios.post(`${URL}/auth/signin`, userData, {withCredentials: true});
+    const response = await axios.post(`${URL}/auth/signin`, userCred, {withCredentials: true});
     if (response.status === 200) {
       console.log("RESPONSE EN SIGNIN: ", response);
       

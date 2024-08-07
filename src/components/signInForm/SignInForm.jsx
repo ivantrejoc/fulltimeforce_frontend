@@ -1,26 +1,23 @@
 import "./signInForm.scss";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { signIn } from "../../services/authServices";
+import { getAuthorization } from "../../redux/actions";
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors }
   } = useForm();
 
   const onSubmit = async (data) => {
     try {
-      const response = await signIn(data);
-      if (response.autheticated) {
-        navigate("/");
-        reset();
-      } else {
-        alert(response.error);
-      }
+      dispatch(getAuthorization(data));
+      navigate("/");
     } catch (error) {
       console.error(error);
       alert(error.message);
@@ -39,7 +36,8 @@ const SignInForm = () => {
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           <div className="signin-inputBox">
             <label htmlFor="email">Email</label>
-            <input className="signin-input"
+            <input
+              className="signin-input"
               id="email"
               type="text"
               placeholder="Johndoe@mail.com"
@@ -59,7 +57,7 @@ const SignInForm = () => {
           <div className="signin-inputBox">
             <label htmlFor="password">Password</label>
             <input
-            className="signin-input"
+              className="signin-input"
               id="password"
               type="password"
               placeholder="Your password..."

@@ -1,8 +1,9 @@
-import { GET_POSTS, GET_POST_BY_ID, EDIT_POST, DELETE_POST } from "./action-types";
+import { GET_POSTS, GET_POST_BY_ID, EDIT_POST, DELETE_POST, GET_AUTH } from "./action-types";
 
 const initialState = {
   posts: [],
-  postById: {}
+  postById: {},
+  isAuth: null,
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -21,7 +22,10 @@ const rootReducer = (state = initialState, action) => {
       case DELETE_POST:
         const postdeleteId = action.payload;        
         const updatedPosts = state.posts.filter((post)=> post._id !== postdeleteId);
-        return { ...state, posts: updatedPosts };        
+        return { ...state, posts: updatedPosts };
+      case GET_AUTH:
+        console.log("UPDATED STATE: ",{ ...state, isAuth: action.payload });
+        return { ...state, isAuth: action.payload };
     default:
       return { ...state };
   }
