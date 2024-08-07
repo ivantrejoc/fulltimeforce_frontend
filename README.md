@@ -57,7 +57,7 @@ You could create a new blog post clicking on the create post button on navigatio
 If you want to get out of the application click on Sign out button on navigation.
 
 
-# ***ATTENTION: The only way to use all the application features is creating an account and sign in, all the application routes are protected with a session credentials ***
+###  ***ATTENTION: The only way to use all the application features is creating an account and sign in, all the application routes are protected with a session credentials ***
 
 
 
