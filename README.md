@@ -2,6 +2,8 @@
 
 Blog application where you could create, read, edit and delete posts with your thoughts. 
 
+Developed using React Create App, SCSS, Redux, Axios and React-hook-form.
+
 ## Installation
 
 **Download:**
