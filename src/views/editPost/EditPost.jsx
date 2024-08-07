@@ -11,8 +11,7 @@ const EditPost = () => {
   const {
     register,
     handleSubmit,
-    reset,
-    formState: { errors }
+    reset,    
   } = useForm({
     defaultValues: {
       id: post._id,
