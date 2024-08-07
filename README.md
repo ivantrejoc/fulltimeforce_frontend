@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# **Fulltimeforce React Blog Application**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Blog application where you could create, read, edit and delete posts with your thoughts. 
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+**Download:**
 
+Please download the repository from dev branch, and don't fork the repository. Once you have the repository installed on your local, open de project and follow this instructions:
+
+In the root project directory, you can run:
+
+### `npm install`
+
+Once all dependencies has been installed create a .env file at root of project and add the following environment variable:
+
+**REACT_APP_API**=http://localhost:3002/api
+
+
+Once you have your environment variable saved execute the following command: 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+And now you can use the application at http://localhost:3000.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **USAGE** 
 
-### `npm test`
+# **Register:**
+First create and register a new user with email, username and password. Take on account that the sign up form has many different validations, please be sure to complete all the fields with the necessary information.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **SIGN IN:**
 
-### `npm run build`
+Once you have registered, you can sign in with your email and password using the sign in form, if your credentials are invalid the application doesn't allows you continue to use the features.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## **BLOG POSTS LISTS:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Once you are inside the application, you can watch a many different post cards, please choice any post an click on the Read more button to Read the entire post.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Also you have a pagination buttons at bottom of the page which you could navigate between the Blog posts list.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## **DELETE POST:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Once you are into post detail you can click on delete post button and delete the current post.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## **EDIT POST:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Into the Edit post section you could update a post title and content, if you don't want edit anything you can click on edit post button and send the same information as the original.
 
-## Learn More
+## **CREATE POST:** 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You could create a new blog post clicking on the create post button on navigation. Once you are inside the create post view you can type the title and content of your post, once your post is done, click on create post button.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## **SIGN OUT:**
 
-### Code Splitting
+If you want to get out of the application click on Sign out button on navigation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+# ***ATTENTION: The only way to use all the application features is creating an account and sign in, all the application routes are protected with a session credentials ***
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
