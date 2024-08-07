@@ -20,12 +20,20 @@ const SignInForm = () => {
     try {
       const response = await signIn(data);
       dispatch(getAuthorization(response));
-      console.log("AUTHORIZATION EN FUNC: ", authorization);
-      if (response.authenticated && authorization.authenticated) {
-        navigate("/");
-      } else {
-        throw new Error(response.error);
-      }
+
+      setTimeout(() => {
+        if (response.authenticated && authorization.authenticated) {
+          navigate("/");
+        } else {
+          throw new Error(response.error);
+        }
+      }, 0);
+      // console.log("AUTHORIZATION EN FUNC: ", authorization);
+      // if (response.authenticated && authorization.authenticated) {
+      //   navigate("/");
+      // } else {
+      //   throw new Error(response.error);
+      // }
     } catch (error) {
       console.error(error);
       alert(error.message);
